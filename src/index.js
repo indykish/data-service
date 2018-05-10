@@ -1,3 +1,6 @@
+require('./heapdump');
+require('./memwatch');
+
 const Koa = require('koa');
 const chalk = require('chalk');
 const cors = require('@koa/cors');

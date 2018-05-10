@@ -14,7 +14,9 @@
   "devDependencies": {
     "dotenv-cli": "^1.4.0",
     "eslint": "^4.19.1",
-    "jest": "^22.4.3"
+    "heapdump": "^0.3.9",
+    "jest": "^22.4.3",
+    "memwatch-next": "^0.3.0"
   },
   "dependencies": {
     "@koa/cors": "^2.2.1",
