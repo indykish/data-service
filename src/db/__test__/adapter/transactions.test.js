@@ -41,16 +41,18 @@ describe('Exchange transactions methods should correctly', () => {
       });
   });
 
+  const filters = { limit: 1, timeStart: new Date('2018-01-01') };
+
   it('resolve many', done => {
     const spy = jest.fn();
     const manyGood = adapter.good(() => [], sql.create(spy));
 
     manyGood.transactions.exchange
-      .many([1, 2, 3])
+      .many(filters)
       .run()
       .listen({
         onResolved: () => {
-          expect(getSqlSpyArgs(spy)).toEqual([[1, 2, 3]]);
+          expect(getSqlSpyArgs(spy)).toEqual([filters]);
           done();
         },
       });
@@ -61,11 +63,11 @@ describe('Exchange transactions methods should correctly', () => {
     const manyBad = adapter.bad(() => [], sql.create(spy));
 
     manyBad.transactions.exchange
-      .many([1, 2, 3])
+      .many(filters)
       .run()
       .listen({
         onRejected: () => {
-          expect(getSqlSpyArgs(spy)).toEqual([[1, 2, 3]]);
+          expect(getSqlSpyArgs(spy)).toEqual([filters]);
           done();
         },
       });

@@ -1,12 +1,13 @@
 const createResolver = require('../');
 
-const loadConfig = require('../../../../loadConfig');
-const createDb = require('../../../../db/index');
 const { parseDate } = require('../../../../utils/parseDate');
 const TX_ID = '8rEwYY4wQ4bkEkk95EiyeQnvnonX6TAnU6eiBAbVSADk';
 const YESTERDAY = new Date(Date.now() - 60 * 60 * 24 * 1000);
 
-const db = createDb(loadConfig());
+const db = require('../../../../db/__test__/integration/createDb')();
+
+const Cursor = require('../../../pagination/cursor');
+
 const resolverOne = createResolver.one({
   db,
   emitEvent: () => () => null,
@@ -44,8 +45,6 @@ describe('Exchange transaction resolver for many', () => {
     expect(tx.data).toHaveLength(20);
   });
   describe('Pagination ', async () => {
-    const Cursor = require('../pagination/cursor');
-    const { parseDate } = require('../../../../utils/parseDate');
     const START = '2018-06-02T10:59:43.000Z';
     const END = '2018-06-03T23:59:48.000Z';
     const LIMIT = 21;
@@ -67,7 +66,7 @@ describe('Exchange transaction resolver for many', () => {
       })
         .run()
         .promise();
-        
+
       expect(firstTx.data).not.toEqual(secondTx.data);
     });
     it(' works asc', async () => {
