@@ -167,7 +167,7 @@ describe('Exchange transaction resolver for many', () => {
       amountAsset: 'B3uGHFRpSUuGEDWjqB9LWWxafQj8VTvpMucEyoxzws5H',
       limit: 100,
       timeStart: parseDate('1525132800000'),
-      priceAsset: 'WAVES',
+      priceAsset: 'TN',
     })
       .run()
       .promise()
@@ -184,7 +184,7 @@ describe('Exchange transaction resolver for many', () => {
       amountAsset: 'B3uGHFRpSUuGEDWjqB9LWWxafQj8VTvpMucEyoxzws5H',
       limit: 100,
       timeStart: parseDate('-1525132800000'),
-      priceAsset: 'WAVES',
+      priceAsset: 'TN',
     })
       .run()
       .promise()
@@ -201,7 +201,7 @@ describe('Exchange transaction resolver for many', () => {
       amountAsset: 'B3uGHFRpSUuGEDWjqB9LWWxafQj8VTvpMucEyoxzws5H',
       limit: 100,
       timeStart: parseDate('1525132800000'),
-      priceAsset: 'WAVES',
+      priceAsset: 'TN',
     })
       .run()
       .promise()
@@ -217,7 +217,7 @@ describe('Exchange transaction resolver for many', () => {
       amountAsset: 'B3uGHFRpSUuGEDWjqB9LWWxafQj8VTvpMucEyoxzws5H',
       limit: 100,
       timeStart: parseDate(''),
-      priceAsset: 'WAVES',
+      priceAsset: 'TN',
     })
       .run()
       .promise()
@@ -233,7 +233,7 @@ describe('Exchange transaction resolver for many', () => {
       amountAsset: 'B3uGHFRpSUuGEDWjqB9LWWxafQj8VTvpMucEyoxzws5H',
       limit: 100,
       timeEnd: parseDate('1525132800000'),
-      priceAsset: 'WAVES',
+      priceAsset: 'TN',
     })
       .run()
       .promise()

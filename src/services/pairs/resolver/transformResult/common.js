@@ -6,7 +6,7 @@ const transformPairInfo = compose(
   renameKeys({
     last_price: 'lastPrice',
     first_price: 'firstPrice',
-    volume_waves: 'volumeWaves',
+    volume_waves: 'volumeTN',
   })
 );
 

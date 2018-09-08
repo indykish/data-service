@@ -37,7 +37,7 @@ const transformTxInfo = pipe(
     asset_id: 'assetId',
     fee_asset: 'feeAsset',
     time_stamp: 'timestamp',
-    volume_waves: 'volumeWaves',
+    volume_waves: 'volumeTN',
   }),
   processProofsAndSignature,
   addZippedTransfers,

@@ -1,6 +1,6 @@
 const { renameKeys } = require('ramda-adjunct');
 const { compose, reject, isNil } = require('ramda');
-const { Asset } = require('@waves/data-entities');
+const { Asset } = require('@turtlenetwork/data-entities');
 
 /** transformAssetInfo:: RawAssetInfo -> AssetInfo */
 const transformAsset = compose(

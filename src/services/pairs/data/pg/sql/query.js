@@ -56,7 +56,7 @@ const averagePriceWithWaves = asset =>
     )
     .whereRaw(
       "(amount_asset || '/' || price_asset = ? OR amount_asset || '/' || price_asset = ?)",
-      [`${asset}/WAVES`, `WAVES/${asset}`]
+      [`${asset}/TN`, `TN/${asset}`]
     )
     .clone();
 

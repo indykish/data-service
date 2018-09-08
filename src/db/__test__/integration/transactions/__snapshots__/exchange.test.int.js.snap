@@ -23,7 +23,7 @@ anonymous {
   "o2_time_stamp": 2018-05-22T10:07:07.920Z,
   "o2_type": "sell",
   "tx_amount": "1693.80213373",
-  "tx_amount_asset": "WAVES",
+  "tx_amount_asset": "TN",
   "tx_buy_matcher_fee": "0.003",
   "tx_fee": "0.003",
   "tx_height": 1010553,

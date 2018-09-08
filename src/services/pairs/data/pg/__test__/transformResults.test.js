@@ -1,4 +1,4 @@
-const { BigNumber } = require('@waves/data-entities');
+const { BigNumber } = require('@turtlenetwork/data-entities');
 
 const transformResults = require('../adapter/transformResults');
 
@@ -16,9 +16,9 @@ const resultCommon = {
 };
 
 describe('Pairs transformResult function', () => {
-  it('covers case when WAVES — amount asset', () => {
+  it('covers case when TN — amount asset', () => {
     const pair = {
-      amountAsset: 'WAVES',
+      amountAsset: 'TN',
       priceAsset: 'Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck',
     };
     const result = resultCommon;
@@ -32,9 +32,9 @@ describe('Pairs transformResult function', () => {
     expect(transformResults(pair)(result)).toEqual(expected);
   });
 
-  it('covers case when WAVES — price asset', () => {
+  it('covers case when TN — price asset', () => {
     const pair = {
-      priceAsset: 'WAVES',
+      priceAsset: 'TN',
       amountAsset: '474jTeYx2r2Va35794tCScAXWJG9hU2HcgxzMowaZUnu',
     };
     const result = resultCommon;
@@ -48,13 +48,13 @@ describe('Pairs transformResult function', () => {
     expect(transformResults(pair)(result)).toEqual(expected);
   });
 
-  describe('WAVES is neither price nor amount asset', () => {
+  describe('TN is neither price nor amount asset', () => {
     const pair = {
       priceAsset: 'Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck',
       amountAsset: '474jTeYx2r2Va35794tCScAXWJG9hU2HcgxzMowaZUnu',
     };
 
-    it('covers case `priceAsset/WAVES` is a valid pair, should multiply by avg_price', () => {
+    it('covers case `priceAsset/TN` is a valid pair, should multiply by avg_price', () => {
       const volumePriceAsset = new BigNumber(10).pow(10).multipliedBy(2);
       const avgPrice = new BigNumber(10).pow(6).multipliedBy(3);
 
@@ -62,7 +62,7 @@ describe('Pairs transformResult function', () => {
         ...resultCommon,
         volume_price_asset: volumePriceAsset, // overriding for this test purposes
         avg_price_with_waves: avgPrice,
-        price_asset_with_waves: 'WAVES',
+        price_asset_with_waves: 'TN',
       };
 
       const expected = {
@@ -72,13 +72,13 @@ describe('Pairs transformResult function', () => {
         volume_waves: volumePriceAsset
           .multipliedBy(new BigNumber(10).pow(-pDecimals)) // to true volume
           .multipliedBy(avgPrice)
-          .multipliedBy(new BigNumber(10).pow(-8 + pDecimals - WAVES_DECIMALS)), // to true price (Waves dec — 8)
+          .multipliedBy(new BigNumber(10).pow(-8 + pDecimals - WAVES_DECIMALS)), // to true price (TN dec — 8)
       };
 
       expect(transformResults(pair)(result)).toEqual(expected);
     });
 
-    it('covers case `WAVES/priceAsset` is a valid pair, should divide by avg_price', () => {
+    it('covers case `TN/priceAsset` is a valid pair, should divide by avg_price', () => {
       const volumePriceAsset = new BigNumber(10).pow(10).multipliedBy(6);
       const avgPrice = new BigNumber(10).pow(6).multipliedBy(3);
 
@@ -96,7 +96,7 @@ describe('Pairs transformResult function', () => {
         volume_waves: volumePriceAsset
           .multipliedBy(new BigNumber(10).pow(-pDecimals)) // to true volume
           .dividedBy(avgPrice)
-          .dividedBy(new BigNumber(10).pow(-8 + WAVES_DECIMALS - pDecimals)), // to true price (Waves dec — 8)
+          .dividedBy(new BigNumber(10).pow(-8 + WAVES_DECIMALS - pDecimals)), // to true price (TN dec — 8)
       };
 
       expect(transformResults(pair)(result)).toEqual(expected);
@@ -104,25 +104,25 @@ describe('Pairs transformResult function', () => {
   });
 
   describe('corner cases', () => {
-    it('WAVES — amount asset, no transactions happened within a day', () => {
+    it('TN — amount asset, no transactions happened within a day', () => {
       const pair = {
-        amountAsset: 'WAVES',
+        amountAsset: 'TN',
         priceAsset: 'Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck',
       };
 
       expect(transformResults(pair)(null)).toEqual(null);
     });
 
-    it('WAVES — price asset, no transactions happened within a day', () => {
+    it('TN — price asset, no transactions happened within a day', () => {
       const pair = {
         amountAsset: 'Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck',
-        priceAsset: 'WAVES',
+        priceAsset: 'TN',
       };
 
       expect(transformResults(pair)(null)).toEqual(null);
     });
 
-    it('WAVES is neither price nor amount, transactions within pair occured, but no transactions priceAsset--WAVES happened', () => {
+    it('TN is neither price nor amount, transactions within pair occured, but no transactions priceAsset--TN happened', () => {
       const pair = {
         amountAsset: '474jTeYx2r2Va35794tCScAXWJG9hU2HcgxzMowaZUnu',
         priceAsset: 'Ft8X1v1LTa1ABafufpaCWyVj8KkaxUWE6xBhW6sNFJck',

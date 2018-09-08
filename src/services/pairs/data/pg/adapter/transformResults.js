@@ -57,12 +57,12 @@ const transformResults = curry(({ amountAsset, priceAsset }, result) => {
   };
 
   switch (true) {
-    case amountAsset === 'WAVES':
+    case amountAsset === 'TN':
       return {
         ...resultCommon,
         volume_waves: resultCommon.volume,
       };
-    case priceAsset === 'WAVES': {
+    case priceAsset === 'TN': {
       return {
         ...resultCommon,
         volume_waves: convertAmount(WAVES_DECIMALS, volumePriceAsset),
@@ -82,7 +82,7 @@ const transformResults = curry(({ amountAsset, priceAsset }, result) => {
 
       const volumeConverted = convertAmount(pDecimals, volumePriceAsset);
 
-      if (priceAssetWithWaves === 'WAVES') {
+      if (priceAssetWithWaves === 'TN') {
         const priceConverted = convertPrice(
           pDecimals,
           WAVES_DECIMALS,

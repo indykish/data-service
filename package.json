@@ -1,10 +1,10 @@
 {
   "name": "data-service",
   "version": "0.8.0",
-  "description": "Waves data service",
+  "description": "TN data service",
   "main": "src/index.js",
-  "repository": "git@github.com:wavesplatform/data-service.git",
-  "author": "Dmitry Shuranov <dvshur@gmail.com>",
+  "repository": "git@github.com:BlackTurtle123/data-service.git",
+  "author": "Mr Turtle <info@blackturtle.eu>",
   "license": "MIT",
   "scripts": {
     "start": "export $(cat variables.env | xargs) && nodemon index.js",
@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@koa/cors": "^2.2.1",
-    "@waves/data-entities": "^1.1.0",
+    "@turtlenetwork/data-entities": "^5.0.0",
     "@waves/json-bigint": "git+https://github.com/wavesplatform/json-bigint.git",
     "bignumber.js": "^7.0.1",
     "chalk": "^2.3.2",

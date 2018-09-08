@@ -7,7 +7,7 @@ module.exports = async ctx => {
 
   ctx.state.returnValue = {
     version,
-    github: 'https://github.com/wavesplatform/data-service',
+    github: 'https://github.com/BlackTurtle123/data-service',
   };
 
   if (process.env.DOCS_URL)

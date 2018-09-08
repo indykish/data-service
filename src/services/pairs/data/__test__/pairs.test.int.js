@@ -1,4 +1,4 @@
-const { BigNumber } = require('@waves/data-entities');
+const { BigNumber } = require('@turtlenetwork/data-entities');
 
 // const { Nothing } = require('folktale/maybe');
 const pair = require('./mocks/pair');
@@ -34,7 +34,7 @@ const data = createData({
 describe('Pair data request ', () => {
   it('returns one pair correctly', done => {
     data
-      .get(pair('WAVES', 'BTC'))
+      .get(pair('TN', 'BTC'))
       .run()
       .listen({
         onResolved: maybeX => {
@@ -45,10 +45,10 @@ describe('Pair data request ', () => {
       });
   });
 
-  it('returns array of results on all possible WAVES positions', done => {
+  it('returns array of results on all possible TN positions', done => {
     const pairs = [
-      pair('WAVES', 'BTC'),
-      pair('ETH', 'WAVES'),
+      pair('TN', 'BTC'),
+      pair('ETH', 'TN'),
       pair('ETH', 'BTC'),
       { amountAsset: 'qwe', priceAsset: 'asd' },
     ];

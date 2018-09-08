@@ -1,4 +1,4 @@
-const { BigNumber } = require('@waves/data-entities');
+const { BigNumber } = require('@turtlenetwork/data-entities');
 
 const txExchange = {
   tx_id: '8rEwYY4wQ4bkEkk95EiyeQnvnonX6TAnU6eiBAbVSADk',
@@ -9,7 +9,7 @@ const txExchange = {
   tx_sender: '3PJaDyprvekvPXPuAtxrapacuDJopgJRaU3',
   tx_sender_public_key: '7kPFrHDiGw1rCm7LPszuECwWYL3dMf6iMifLRDJQZMzy',
   tx_amount_asset: 'BkFyeRdrLquxds5FenxyonyfTwMVJJ6o6L7VTaPr5fs3',
-  tx_price_asset: 'WAVES',
+  tx_price_asset: 'TN',
   tx_price: new BigNumber('1'),
   tx_amount: new BigNumber('1'),
   tx_fee: new BigNumber('1'),

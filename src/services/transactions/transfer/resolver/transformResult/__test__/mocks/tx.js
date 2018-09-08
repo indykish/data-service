@@ -1,4 +1,4 @@
-const { BigNumber } = require('@waves/data-entities');
+const { BigNumber } = require('@turtlenetwork/data-entities');
 module.exports = {
   height: 554168,
   tx_type: 4,
@@ -14,6 +14,6 @@ module.exports = {
   asset_id: 'AnERqFRffNVrCbviXbDEdzrU6ipXCP5Y1PKpFdRnyQAy',
   amount: new BigNumber(46519),
   recipient: '3PGt8w1RXz3HSvsrcYLY66yPNM334NGZg9h',
-  fee_asset: 'WAVES',
+  fee_asset: 'TN',
   attachment: '',
 };

@@ -4,7 +4,7 @@ const { stateToResult, prepareForCaching } = require('../create/mgetUtils');
 const pair = require('./mocks/pair');
 
 // request state in different cases
-const request = [pair('ETH', 'BTC'), pair('WAVES', 'BTC'), pair('BTC', 'USD')];
+const request = [pair('ETH', 'BTC'), pair('TN', 'BTC'), pair('BTC', 'USD')];
 const getPairResp = index => Maybe.of({ pair: request[index] });
 const fullResp = [getPairResp(0), getPairResp(1), getPairResp(2)];
 const fullCache = {

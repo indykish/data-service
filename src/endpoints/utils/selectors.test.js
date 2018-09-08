@@ -6,8 +6,8 @@ const CTX = {
     __field__: '__value__',
   },
   query: {
-    ids: 'WAVES,BTC,USD',
-    pairs: 'WAVES/BTC,WAVES/USD',
+    ids: 'TN,BTC,USD',
+    pairs: 'TN/BTC,TN/USD',
     __field__: '__value__',
   },
 };
@@ -20,11 +20,11 @@ describe('Context selectors', () => {
   });
 
   it('select multiple ids from query', () => {
-    expect(s.ids).toEqual(['WAVES', 'BTC', 'USD']);
+    expect(s.ids).toEqual(['TN', 'BTC', 'USD']);
   });
 
   it('select multiple pairs from query', () => {
-    expect(s.pairs).toEqual(['WAVES/BTC', 'WAVES/USD']);
+    expect(s.pairs).toEqual(['TN/BTC', 'TN/USD']);
   });
 
   describe('`params` selector', () => {
@@ -39,7 +39,7 @@ describe('Context selectors', () => {
 
   describe('`query` selector', () => {
     it('should return any field from query as is', () => {
-      expect(s.query.ids).toEqual('WAVES,BTC,USD');
+      expect(s.query.ids).toEqual('TN,BTC,USD');
       expect(s.query.__field__).toEqual('__value__');
     });
     it('should return undefined for non-exiscint fields', () => {
