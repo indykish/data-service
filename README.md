@@ -4,7 +4,7 @@
 
 This is an API aimed at retrieving data from blockchain quickly and conveniently. We  support public APIs for: 
 - Mainnet
-  - [https://api.blackturtle.eu/](https://api.blackturtle.eu/)
+  - [https://api.blackturtle.eu/v0/](https://api.blackturtle.eu/v0/)
 The provided links should redirect to Swagger API documentation automatically. If not, visit `/docs` for reference.
 
 
