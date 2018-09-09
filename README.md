@@ -1,10 +1,10 @@
 # TN data service API
 
-**⚠️ This service is currently in /v0. Breaking changes are coming in /v1 (also possible, but not likely, within /v0 releases). Please use with caution.**
+**⚠️ This service is currently in v0. Breaking changes are coming in v1 (also possible, but not likely, within v0 releases). Please use with caution.**
 
 This is an API aimed at retrieving data from blockchain quickly and conveniently. We  support public APIs for: 
 - Mainnet
-  - [https://api.blackturtle.eu/v0/](https://api.blackturtle.eu/v0/)
+  - [https://api.blackturtle.eu/](https://api.blackturtle.eu/)
 The provided links should redirect to Swagger API documentation automatically. If not, visit `/docs` for reference.
 
 
