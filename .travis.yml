@@ -1,6 +1,11 @@
 services:
   - docker
 before_install:
-  - docker build -t wavesplatform/data-service .
+  - docker build -t tn/data-service .
 install: skip
 script: skip
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master
