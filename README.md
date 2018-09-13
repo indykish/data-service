@@ -1,5 +1,7 @@
 # TN data service API
 
+[![Build Status](https://travis-ci.org/BlackTurtle123/data-service.svg?branch=develop)](https://travis-ci.org/BlackTurtle123/data-service)
+
 **⚠️ This service is currently in v0. Breaking changes are coming in v1 (also possible, but not likely, within v0 releases). Please use with caution.**
 
 This is an API aimed at retrieving data from blockchain quickly and conveniently. We  support public APIs for: 
