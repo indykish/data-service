@@ -1,7 +1,7 @@
 services:
   - docker
 before_install:
-  - docker build -t tn/data-service .
+  - docker build -t dockerturtlenetwork/data-service .
 install: skip
 script: skip
 deploy:
